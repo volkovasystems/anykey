@@ -1,11 +1,12 @@
 {
   "name": "anykey",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Checks if any of the key exists on the entity.",
   "main": "anykey.deploy.js",
   "support": "anykey.support.js",
   "authors": [
-    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
   ],
   "license": "MIT",
   "keywords": [
@@ -24,14 +25,9 @@
     "test",
     "tests"
   ],
-  "resolutions": {
-    "raze": "^0.29.0",
-    "doubt": "^0.26.0",
-    "stringe": "^0.3.0"
-  },
   "dependencies": {
     "doubt": "^0.26.0",
-    "kein": "^0.21.0",
+    "kein": "^0.23.0",
     "portel": "^0.3.0",
     "raze": "^0.29.0"
   }
