@@ -1,6 +1,6 @@
 {
   "name": "anykey",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Checks if any of the key exists on the entity.",
   "main": "anykey.deploy.js",
   "support": "anykey.support.js",
@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "doubt": "^0.26.0",
-    "kein": "^0.23.0",
+    "kein": "^0.25.0",
     "portel": "^0.3.0",
     "raze": "^0.29.0"
   }
