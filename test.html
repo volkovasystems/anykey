@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>anykey unit test</title>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Anykey QUnit Example</title>
-	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
-	<script src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
-	<script type="application/javascript" src="./anykey.deploy.js"></script>
-</head>
+		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
 
-<body>
-	<div id="qunit"></div>
-	<div id="qunit-fixture"></div>
-	<script>
-		QUnit.test("equal test", function (assert) {
+		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
 
-			assert.equal(anykey("toString", NaN), true, "should be true");
+		<script type="application/javascript" src="./anykey.deploy.js"></script>
+	</head>
 
-			assert.equal(anykey("toString", undefined), true, "should be true");
+	<body>
+		<div id="qunit"></div>
 
-			assert.equal(anykey("toString", 123), true, "should be true");
+		<div id="qunit-fixture"></div>
 
-			assert.equal(anykey(["toString", "valueOf"], 123), true, "should be true");
+		<script type="application/javascript">
+			QUnit.test( "anykey unit test", function( assert ) {
 
-			assert.equal(anykey(Symbol.for("property"), { [Symbol.for("property")]: "value" }), true, "should be true");
+				assert.equal( anykey( "toString", NaN ), true, "should be true" );
 
-			assert.equal(anykey("property", { "property": "value" }), true, "should be true");
+				assert.equal( anykey( "toString", 123 ), true, "should be true" );
 
-			assert.equal(anykey(["toString", "valueOf", "yeah"], false), true, "should be true");
+				assert.equal( anykey( [ "toString", "valueOf" ], 123 ), true, "should be true" );
 
-			assert.equal(anykey(["hello", "world", "yeah"], ""), false, "should be false");
+				assert.equal( anykey( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true, "should be true" );
 
-		});
-	</script>
-</body>
+				assert.equal( anykey( "property", { "property": "value" } ), true, "should be true" );
 
+				assert.equal( anykey( [ "toString", "valueOf", "yeah" ], false ), true, "should be true" );
+
+				assert.equal( anykey( [ "hello", "world", "yeah" ], "" ), false, "should be false" );
+
+			} );
+		</script>
+	</body>
 </html>

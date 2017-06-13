@@ -2,11 +2,7 @@
 const assert = require( "assert" );
 const anykey = require( "./anykey.js" );
 
-//assert.equal( anykey( "toString", null ), true, "should be true" );
-
 assert.equal( anykey( "toString", NaN ), true, "should be true" );
-
-assert.equal( anykey( "toString", undefined ), true, "should be true" );
 
 assert.equal( anykey( "toString", 123 ), true, "should be true" );
 
