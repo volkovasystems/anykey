@@ -1,8 +1,6 @@
 yarn add \
 babel-runtime \
-doubt \
 kein \
-portel \
 raze \
 zelf \
 --save && \
@@ -15,9 +13,7 @@ source-map-loader \
 webpack \
 --dev && \
 bower install \
-doubt \
 kein \
-portel \
 raze \
 zelf \
 --save \

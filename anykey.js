@@ -49,18 +49,16 @@
 
 	@include:
 		{
-			"doubt": "doubt",
 			"kein": "kein",
-			"portel": "portel",
-			"raze": "raze"
+			"raze": "raze",
+			"zelf": "zelf"
 		}
 	@end-include
 */
 
-const doubt = require( "doubt" );
 const kein = require( "kein" );
-const portel = require( "portel" );
 const raze = require( "raze" );
+const zelf = require( "zelf" );
 
 const anykey = function anykey( key, entity ){
 	/*;
@@ -77,23 +75,11 @@ const anykey = function anykey( key, entity ){
 		@end-meta-configuration
 	*/
 
-	if( !doubt( key, AS_ARRAY ) ){
-		key = [ key ];
-	}
-
-	if( arguments.length == 2 ){
-		entity = portel( entity );
-
-	}else{
+	if( arguments.length == 1 ){
 		entity = zelf( this );
 	}
 
-	try{
-		return raze( key ).some( ( key ) => kein( key, entity ) );
-
-	}catch( error ){
-		throw new Error( `cannot check any keys, ${ error.stack }` );
-	}
+	return raze( key ).some( ( key ) => kein( key, entity ) );
 };
 
 module.exports = anykey;
