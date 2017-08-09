@@ -32,6 +32,10 @@
 
 				assert.equal( anykey( [ "hello", "world", "yeah" ], "" ), false, "should be equal to false" );
 
+				var hello = Symbol( "hello" );
+				var hi = Symbol( "hi" );
+				var object = { [ hello ]: 123, [ hi ]: 123 };
+				assert.equal( anykey( [ hello, hi ], object ), true, "should be true" );
 			} );
 		</script>
 	</body>
