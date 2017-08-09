@@ -4,6 +4,7 @@ doubt \
 kein \
 portel \
 raze \
+zelf \
 --save && \
 yarn add \
 babel-cli \
@@ -18,5 +19,6 @@ doubt \
 kein \
 portel \
 raze \
+zelf \
 --save \
 --force-latest
