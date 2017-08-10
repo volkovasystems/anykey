@@ -20,6 +20,6 @@ assert.equal( anykey( [ "hello", "world", "yeah" ], "" ), false, "should be equa
 var hello = Symbol( "hello" );
 var hi = Symbol( "hi" );
 var object = { [ hello ]: 123, [ hi ]: 123 };
-assert.equal( anykey( [ hello, hi ], object ), true, "should be true" );
+assert.equal( anykey( [ hello, hi ], object ), true, "should be equal to true" );
 
 console.log( "ok" );
