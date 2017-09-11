@@ -1,44 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>anykey unit test</title>
+		<meta charset="utf-8">
 
-		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+		<title>test:anykey</title>
 
-		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
-
-		<script type="application/javascript" src="./anykey.deploy.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css"/>
 	</head>
 
 	<body>
-		<div id="qunit"></div>
+		<div id="mocha"></div>
 
-		<div id="qunit-fixture"></div>
+		<script type="application/javascript" src="https://unpkg.com/mocha/mocha.js"></script>
 
 		<script type="application/javascript">
-			QUnit.test( "anykey unit test", function( assert ) {
+			mocha.setup( "bdd" );
+		</script>
 
-				assert.equal( anykey( "toString", NaN ), true, "should be equal to true" );
+		<script type="application/javascript" src="./test.deploy.js"></script>
 
-				assert.equal( anykey( "toString", 123 ), true, "should be equal to true" );
-
-				assert.equal( anykey( [ "toString", "valueOf" ], 123 ), true, "should be equal to true" );
-
-				assert.equal( anykey( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true, "should be equal to true" );
-
-				assert.equal( anykey( "property", { "property": "value" } ), true, "should be equal to true" );
-
-
-				assert.equal( anykey( [ "toString", "valueOf", "yeah" ], false ), true, "should be equal to true" );
-
-				assert.equal( anykey( [ "hello", "world", "yeah" ], "" ), false, "should be equal to false" );
-
-				var hello = Symbol( "hello" );
-				var hi = Symbol( "hi" );
-				var object = { [ hello ]: 123, [ hi ]: 123 };
-				assert.equal( anykey( [ hello, hi ], object ), true, "should be equal to true" );
-
-			} );
+		<script type="application/javascript">
+			mocha.run( );
 		</script>
 	</body>
 </html>
