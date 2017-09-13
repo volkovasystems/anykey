@@ -45,13 +45,13 @@
 
 	@include:
 		{
-			"assert": "should",
+			"assert": "should/as-function",
 			"anykey": "anykey"
 		}
 	@end-include
 */
 
-const assert = require( "should" );
+const assert = require( "should/as-function" );
 
 //: @server:
 const anykey = require( "./anykey.js" );
@@ -63,11 +63,61 @@ const anykey = require( "./anykey.js" );
 
 
 //: @server:
-
 describe( "anykey", ( ) => {
 
-} );
+	describe( "`anykey( 'toString', NaN )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( anykey( "toString", NaN ), true );
+		} );
+	} );
 
+	describe( "`anykey( 'toString', 123 )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( anykey( "toString", 123 ), true );
+		} );
+	} );
+
+	describe( "`anykey( [ 'toString', 'valueOf' ], 123 )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( anykey( [ "toString", "valueOf" ], 123 ), true );
+		} );
+	} );
+
+	describe( "`anykey( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( anykey( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true );
+		} );
+	} );
+
+	describe( "`anykey( 'property', { 'property': 'value' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( anykey( "property", { "property": "value" } ), true );
+		} );
+	} );
+
+	describe( "`anykey( [ 'toString', 'valueOf', 'yeah' ], false )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( anykey( [ "toString", "valueOf", "yeah" ], false ), true );
+		} );
+	} );
+
+	describe( "`anykey( [ 'hello', 'world', 'yeah' ], '' )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+			assert.equal( anykey( [ "hello", "world", "yeah" ], "" ), false );
+		} );
+	} );
+
+	describe( "`anykey( [ Symbol( 'hello' ), Symbol( 'hi' ) ], { [ Symbol( 'hello' ) ]: 123, [ Symbol( 'hi' ) ]: 123 } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let hello = Symbol( "hello" );
+			let hi = Symbol( "hi" );
+			let object = { [ hello ]: 123, [ hi ]: 123 };
+
+			assert.equal( anykey( [ hello, hi ], object ), true );
+		} );
+	} );
+
+} );
 //: @end-server
 
 

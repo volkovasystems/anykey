@@ -25,5 +25,10 @@
 		"bower_components",
 		"test",
 		"tests"
-	]
+	],
+	"dependencies": {
+		"kein": "^0.30.0",
+		"raze": "^0.34.0",
+		"zelf": "^0.14.0"
+	}
 }
