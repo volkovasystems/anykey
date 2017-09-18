@@ -227,12 +227,12 @@ describe( "anykey", ( ) => {
 		} );
 	} );
 
-	describe( "`anykey( 'toString', 123 )`", ( ) => {
+	describe( "`anykey( [ 'toString', 'valueOf' ], 'hello' )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
-					return anykey( "toString", 123 );
+					return anykey( [ "toString", "valueOf" ], "hello" );
 				}
 
 			).value;
@@ -247,6 +247,20 @@ describe( "anykey", ( ) => {
 
 				function( ){
 					return anykey( [ "toString", "valueOf" ], 123 );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+		} );
+	} );
+
+	describe( "`anykey( [ 'toString', 'valueOf' ], [ 1, 2, 3 ] )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return anykey( [ "toString", "valueOf" ], [ 1, 2, 3 ] );
 				}
 
 			).value;
@@ -283,6 +297,8 @@ describe( "anykey", ( ) => {
 			assert.equal( result, true );
 		} );
 	} );
+
+
 
 	describe( "`anykey( [ 'toString', 'valueOf', 'yeah' ], false )`", ( ) => {
 		it( "should be equal to true", ( ) => {
@@ -327,6 +343,20 @@ describe( "anykey", ( ) => {
 
 			).value;
 			//: @end-ignore
+
+			assert.equal( result, true );
+		} );
+	} );
+
+	describe( "`anykey( [ 'toString', 'valueOf' ], function yeah( ){ } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return anykey( [ "toString", "valueOf" ], function yeah( ){ } );
+				}
+
+			).value;
 
 			assert.equal( result, true );
 		} );
