@@ -1,13 +1,13 @@
 {
 	"stats": {
-		"suites": 9,
-		"tests": 8,
-		"passes": 8,
+		"suites": 11,
+		"tests": 10,
+		"passes": 10,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-09-13T09:36:48.877Z",
-		"end": "2017-09-13T09:36:48.886Z",
-		"duration": 9
+		"start": "2017-09-18T08:15:13.384Z",
+		"end": "2017-09-18T08:15:13.391Z",
+		"duration": 7
 	},
 	"tests": [
 		{
@@ -19,15 +19,22 @@
 		},
 		{
 			"title": "should be equal to true",
-			"fullTitle": "anykey `anykey( 'toString', 123 )` should be equal to true",
-			"duration": 0,
+			"fullTitle": "anykey `anykey( [ 'toString', 'valueOf' ], 'hello' )` should be equal to true",
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
 			"title": "should be equal to true",
 			"fullTitle": "anykey `anykey( [ 'toString', 'valueOf' ], 123 )` should be equal to true",
-			"duration": 1,
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "anykey `anykey( [ 'toString', 'valueOf' ], [ 1, 2, 3 ] )` should be equal to true",
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -48,21 +55,28 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "anykey `anykey( [ 'toString', 'valueOf', 'yeah' ], false )` should be equal to true",
-			"duration": 0,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
 			"title": "should be equal to false",
 			"fullTitle": "anykey `anykey( [ 'hello', 'world', 'yeah' ], '' )` should be equal to false",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
 			"title": "should be equal to true",
 			"fullTitle": "anykey `anykey( [ Symbol( 'hello' ), Symbol( 'hi' ) ], { [ Symbol( 'hello' ) ]: 123, [ Symbol( 'hi' ) ]: 123 } )` should be equal to true",
-			"duration": 1,
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "anykey `anykey( [ 'toString', 'valueOf' ], function yeah( ){ } )` should be equal to true",
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		}
@@ -79,15 +93,22 @@
 		},
 		{
 			"title": "should be equal to true",
-			"fullTitle": "anykey `anykey( 'toString', 123 )` should be equal to true",
-			"duration": 0,
+			"fullTitle": "anykey `anykey( [ 'toString', 'valueOf' ], 'hello' )` should be equal to true",
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
 			"title": "should be equal to true",
 			"fullTitle": "anykey `anykey( [ 'toString', 'valueOf' ], 123 )` should be equal to true",
-			"duration": 1,
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "anykey `anykey( [ 'toString', 'valueOf' ], [ 1, 2, 3 ] )` should be equal to true",
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -108,21 +129,28 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "anykey `anykey( [ 'toString', 'valueOf', 'yeah' ], false )` should be equal to true",
-			"duration": 0,
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
 			"title": "should be equal to false",
 			"fullTitle": "anykey `anykey( [ 'hello', 'world', 'yeah' ], '' )` should be equal to false",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
 		{
 			"title": "should be equal to true",
 			"fullTitle": "anykey `anykey( [ Symbol( 'hello' ), Symbol( 'hi' ) ], { [ Symbol( 'hello' ) ]: 123, [ Symbol( 'hi' ) ]: 123 } )` should be equal to true",
-			"duration": 1,
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "anykey `anykey( [ 'toString', 'valueOf' ], function yeah( ){ } )` should be equal to true",
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		}

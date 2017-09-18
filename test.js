@@ -71,15 +71,21 @@ describe( "anykey", ( ) => {
 		} );
 	} );
 
-	describe( "`anykey( 'toString', 123 )`", ( ) => {
+	describe( "`anykey( [ 'toString', 'valueOf' ], 'hello' )`", ( ) => {
 		it( "should be equal to true", ( ) => {
-			assert.equal( anykey( "toString", 123 ), true );
+			assert.equal( anykey( [ "toString", "valueOf" ], "hello" ), true );
 		} );
 	} );
 
 	describe( "`anykey( [ 'toString', 'valueOf' ], 123 )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( anykey( [ "toString", "valueOf" ], 123 ), true );
+		} );
+	} );
+
+	describe( "`anykey( [ 'toString', 'valueOf' ], [ 1, 2, 3 ] )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( anykey( [ "toString", "valueOf" ], [ 1, 2, 3 ] ), true );
 		} );
 	} );
 
@@ -114,6 +120,12 @@ describe( "anykey", ( ) => {
 			let object = { [ hello ]: 123, [ hi ]: 123 };
 
 			assert.equal( anykey( [ hello, hi ], object ), true );
+		} );
+	} );
+
+	describe( "`anykey( [ 'toString', 'valueOf' ], function yeah( ){ } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( anykey( [ "toString", "valueOf" ], function yeah( ){ } ), true );
 		} );
 	} );
 
