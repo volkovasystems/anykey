@@ -89,6 +89,12 @@ describe( "anykey", ( ) => {
 		} );
 	} );
 
+	describe( "`anykey( [ 0, 1 ], { 0: 'hello', 1: 'world' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( anykey( [ 0, 1 ], { 0: "hello", 1: "world" } ), true );
+		} );
+	} );
+
 	describe( "`anykey( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( anykey( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true );

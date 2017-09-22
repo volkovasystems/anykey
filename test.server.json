@@ -1,13 +1,13 @@
 {
 	"stats": {
-		"suites": 11,
-		"tests": 10,
-		"passes": 10,
+		"suites": 12,
+		"tests": 11,
+		"passes": 11,
 		"pending": 0,
 		"failures": 0,
-		"start": "2017-09-18T08:15:13.384Z",
-		"end": "2017-09-18T08:15:13.391Z",
-		"duration": 7
+		"start": "2017-09-22T06:16:29.604Z",
+		"end": "2017-09-22T06:16:29.613Z",
+		"duration": 9
 	},
 	"tests": [
 		{
@@ -40,8 +40,15 @@
 		},
 		{
 			"title": "should be equal to true",
-			"fullTitle": "anykey `anykey( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )` should be equal to true",
+			"fullTitle": "anykey `anykey( [ 0, 1 ], { 0: 'hello', 1: 'world' } )` should be equal to true",
 			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "anykey `anykey( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )` should be equal to true",
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -55,7 +62,7 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "anykey `anykey( [ 'toString', 'valueOf', 'yeah' ], false )` should be equal to true",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -114,8 +121,15 @@
 		},
 		{
 			"title": "should be equal to true",
-			"fullTitle": "anykey `anykey( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )` should be equal to true",
+			"fullTitle": "anykey `anykey( [ 0, 1 ], { 0: 'hello', 1: 'world' } )` should be equal to true",
 			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "anykey `anykey( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )` should be equal to true",
+			"duration": 1,
 			"currentRetry": 0,
 			"err": {}
 		},
@@ -129,7 +143,7 @@
 		{
 			"title": "should be equal to true",
 			"fullTitle": "anykey `anykey( [ 'toString', 'valueOf', 'yeah' ], false )` should be equal to true",
-			"duration": 1,
+			"duration": 0,
 			"currentRetry": 0,
 			"err": {}
 		},
